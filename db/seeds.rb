@@ -4,7 +4,7 @@
 
 TimePeriod.create(name: "Classical Period")
 
-Card.create(card_type: "Hero", name: "Cleopatra", description: "Last active pharaoh of Ancient Egypt.", strength: 4, intelligence: 5, charisma: 8, picture_url: "http://jerryandgod.files.wordpress.com/2013/12/807-e.jpg?w=186&h=186")
+Card.create(card_type: "Hero", name: "Cleopatra", description: "Last active pharaoh of Ancient Egypt.", strength: 4, intelligence: 5, charisma: 8, picture_url: "http://jerryandgod.files.wordpress.com/2013/12/807-e.jpg?w=186&h=186", effect_description: "Poison (set S,I,C=0 rand your hand).", effect_dsl: '[player] (hand>rand) |strength, intelligence, charisma| {=0}')
 
 Card.create(card_type: "Hero", name: "Mark Antony", description: "Transformed the Roman Republic from an oligarchy into the autocratic Roman Empire.", strength: 5, intelligence: 8, charisma: 7, picture_url: "http://media-2.web.britannica.com/eb-media/21/13421-004-A2A61DF4.jpg")
 
@@ -33,7 +33,7 @@ Card.create(card_type: "Hero", name: "Marcus Aurelius", description: "Good Roman
 
 TimePeriod.create(name: "Medieval Period")
 
-Card.create(card_type: "Hero", name: "Genghis Khan", description: "Totally ravaged China.", strength: 10, intelligence: 7, charisma: 9, picture_url: "http://a4.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE4MDAzNDEwNTM0NDk5ODU0.jpg")
+Card.create(card_type: "Hero", name: "Genghis Khan", description: "Totally ravaged China.", strength: 10, intelligence: 7, charisma: 9, picture_url: "http://a4.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE4MDAzNDEwNTM0NDk5ODU0.jpg", effect_description: "Horde (set S=8 your hand).", effect_dsl: '[player] (hand>all) |strength| {=8}')
 
 Card.create(card_type: "Hero", name: "Joan of Arc", description: "a heroine of France and a Roman Catholic saint.", strength: 7, intelligence: 6, charisma: 5, picture_url: "http://media-1.web.britannica.com/eb-media/92/60892-004-53D4AF1E.jpg")
 
@@ -61,7 +61,7 @@ TimePeriod.create(name: "Renaissance")
 
 Card.create(card_type: "Hero", name: "William Shakespeare", description: "widely regarded as the greatest writer in the English language and the world's pre-eminent dramatist.", strength: 4, intelligence: 7, charisma: 6, picture_url: "http://a3.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE1ODA0OTcxNzgzMzkwNzMz.jpg")
 
-Card.create(card_type: "Hero", name: "Queen Elizabeth I", description: "short-tempered, sometimes indecisive ruler, who enjoyed more than her share of luck.", strength: 1, intelligence: 4, charisma: 9, picture_url: "http://media-1.web.britannica.com/eb-media/43/8243-004-A45C42CA.jpg")
+Card.create(card_type: "Hero", name: "Queen Elizabeth I", description: "short-tempered, sometimes indecisive ruler, who enjoyed more than her share of luck.", strength: 1, intelligence: 4, charisma: 3, picture_url: "http://media-1.web.britannica.com/eb-media/43/8243-004-A45C42CA.jpg", effect_description: "Sovereign (-1 S,I,C their hand).", effect_dsl: '[opponent] (hand>all) |strength, intelligence, charisma| {-1}')
 
 Card.create(card_type: "Hero", name: "Martin Luther", description: "seminal figure of the 16th-century movement in Christianity known later as the Protestant Reformation.", strength: 3, intelligence: 8, charisma: 10, picture_url: "http://a2.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE1ODA0OTcxNzA3MjM3OTAx.jpg")
 
@@ -95,7 +95,7 @@ Card.create(card_type: "Hero", name: "Donatello", description: "An Italian paint
 ## ---------------------------------
 TimePeriod.create(name: "Age of Enlightenment")
 
-Card.create(card_type: "Hero", name: "Sir Isaac Newton", description: "an English physicist and mathematician who is widely recognised as one of the most influential scientists of all time and as a key figure in the scientific revolution.", strength: 4, intelligence: 8, charisma: 6, picture_url: "http://upload.wikimedia.org/wikipedia/commons/3/39/GodfreyKneller-IsaacNewton-1689.jpg")
+Card.create(card_type: "Hero", name: "Sir Isaac Newton", description: "an English physicist and mathematician who is widely recognised as one of the most influential scientists of all time and as a key figure in the scientific revolution.", strength: 4, intelligence: 8, charisma: 6, picture_url: "http://upload.wikimedia.org/wikipedia/commons/3/39/GodfreyKneller-IsaacNewton-1689.jpg", effect_description: "Gravity (/2 S their card).", effect_dsl: '[opponent] (selection>all) |strength| {/2}')
 
 # Card.create(card_type: "Hero", name: , description: , strength: , intelligence: , charisma: , picture_url: )
 
@@ -146,11 +146,11 @@ Card.create(card_type: "Hero", name: "Marie Curie", description: "a Polish and n
 ## ---------------------------------
 TimePeriod.create(name: "The New World")
 
-Card.create(card_type: "Hero", name: "Christopher Columbus", description: "Under the auspices of the Catholic Monarchs of Spain, he completed four voyages across the Atlantic Ocean.", strength: 8, intelligence: 8, charisma: 7, picture_url: "http://a4.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_320,q_80,w_300/MTI1MTQzMTAyMDUzNjg5OTg3.jpg", effect_description: "Sailed the ocean blue to charm you (*2 C to player's random card).", effect_dsl: '[player] (hand>rand) |charisma| {*2}')
+Card.create(card_type: "Hero", name: "Christopher Columbus", description: "Under the auspices of the Catholic Monarchs of Spain, he completed four voyages across the Atlantic Ocean.", strength: 1, intelligence: 2, charisma: 3, picture_url: "http://a4.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_320,q_80,w_300/MTI1MTQzMTAyMDUzNjg5OTg3.jpg", effect_description: "Discovery (*2 S rand your hand).", effect_dsl: '[player] (hand>rand) |strength| {*2}')
 
 Card.create(card_type: "Hero", name: "George Washington", description: "the first President of the United States", strength: 6, intelligence: 7, charisma: 8, picture_url: "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2010/4/18/1271630795169/George-Washington-001.jpg")
 
-Card.create(card_type: "Hero", name: "John Smith", description: "He was knighted for his services to Sigismund Bathory, Prince of Transylvania and his friend Mózes Székely.", strength: 9, intelligence: 6, charisma: 4, picture_url: "http://a4.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTIwNjA4NjMzOTc0MTk1NzI0.jpg")
+Card.create(card_type: "Hero", name: "John Smith", description: "He was knighted for his services to Sigismund Bathory, Prince of Transylvania and his friend Mózes Székely.", strength: 9, intelligence: 6, charisma: 4, picture_url: "http://a4.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTIwNjA4NjMzOTc0MTk1NzI0.jpg", effect_description: "smallpox (/2 S rand your hand)", effect_dsl: '[player] (hand>rand) |strength| {/2}')
 
 Card.create(card_type: "Hero", name: "John Rolfe", description: "One of the early English settlers of North America.", strength: 8, intelligence: 4, charisma: 5, picture_url: "http://a2.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NTU2MzE2MzYxMTY0Mjk5.jpg")
 
@@ -185,7 +185,7 @@ Card.create(card_type: "Hero", name: "Abraham Lincoln", description: "Was the 16
 
 Card.create(card_type: "Hero", name: "Friedrich Nietzsche", description: "A German philologist, philosopher, cultural critic, poet and composer.", strength: 3, intelligence: 6, charisma: 5, picture_url: "http://a4.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NTU2MzE2MzMwMTAwMjM1.jpg")
 
-Card.create(card_type: "Hero", name: "Albert Einstein", description: "As a German-born theoretical physicist and philosopher of science.", strength: 2, intelligence: 10, charisma: 8, picture_url: "http://a4.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NDg0MDU0OTU2OTAxOTAz.jpg")
+Card.create(card_type: "Hero", name: "Albert Einstein", description: "As a German-born theoretical physicist and philosopher of science.", strength: 2, intelligence: 10, charisma: 8, picture_url: "http://a4.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NDg0MDU0OTU2OTAxOTAz.jpg", effect_description: "Genius (*2 I your hand)", effect_dsl: '[player] (hand>all) |intelligence| {*2}')
 
 Card.create(card_type: "Hero", name: "Henry Ford", description: "Was an American industrialist, the founder of the Ford Motor Company, and sponsor of the development of the assembly line technique of mass production.", strength: 4, intelligence: 9, charisma: 8, picture_url: "http://a1.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NDg0MDU0OTY2NDA0NjIz.jpg")
 
@@ -202,31 +202,27 @@ TimePeriod.create(name: "Contemporary")
 
 Card.create(card_type: "Hero", name: "Amelia Earhart", description: "Was an American aviation pioneer and author.", strength: 7, intelligence: 6, charisma: 5, picture_url: "http://a2.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NTU2MzE2MjA5NDQ4NDU5.jpg")
 
-Card.create(card_type: "Hero", name: "Kanye West", description: "Was an American rapper, songwriter, record producer, director, entrepreneur, and fashion designer, and god.", strength: 10, intelligence: 10, charisma: 10, picture_url: "http://cdn.stereogum.com/files/2010/08/Kanye-West-Power-Remix-1.jpg", effect_description: )
+Card.create(card_type: "Hero", name: "Kanye West", description: "Was an American rapper, songwriter, record producer, director, entrepreneur, and fashion designer, and god.", strength: 10, intelligence: 10, charisma: 10, picture_url: "http://cdn.stereogum.com/files/2010/08/Kanye-West-Power-Remix-1.jpg", effect_description: "Power (set C=0 their hand)", effect_dsl: '[opponent] (hand>all) |charisma| {=0}')
 
-Card.create(card_type: "Hero", name: "Princess Diana", description: "Diana, Princess of Wales, was the first wife of Charles, Prince of Wales, who is the eldest child and heir apparent of Queen Elizabeth II.", strength: 1, intelligence: 5, charisma: 6, picture_url: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/c17.17.215.215/s160x160/935166_491180230935409_693870860_n.jpg?oh=a1e3a35ac4d8f6db140f3cb6de50d9f7&oe=556EA40A&__gda__=1433292600_c67bbd41094737a0de25381aad025c57", effect_description: "charms to opponent (-5 C)", effect_dsl: '[opponent] (hand>all) |charisma| {-5}')
+Card.create(card_type: "Hero", name: "Princess Diana", description: "Diana, Princess of Wales, was the first wife of Charles, Prince of Wales, who is the eldest child and heir apparent of Queen Elizabeth II.", strength: 1, intelligence: 5, charisma: 6, picture_url: "https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/c17.17.215.215/s160x160/935166_491180230935409_693870860_n.jpg?oh=a1e3a35ac4d8f6db140f3cb6de50d9f7&oe=556EA40A&__gda__=1433292600_c67bbd41094737a0de25381aad025c57", effect_description: "Charm (-5 C their hand)", effect_dsl: '[opponent] (hand>all) |charisma| {-5}')
 
 Card.create(card_type: "Hero", name: "Martin Luther King, Jr.", description: "Was an American pastor, activist, humanitarian, and leader in the African-American Civil Rights Movement.", strength: 6, intelligence: 9, charisma: 10, picture_url: "http://a4.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NTU2MzE2MjgwNDg5NDgz.jpg")
 
 Card.create(card_type: "Hero", name: "Malcolm X", description: "Was an African-American Muslim minister and a human rights activist.", strength: 8, intelligence: 9, charisma: 8, picture_url: "http://a5.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NDg0MDU1MDU1ODYxMjYz.jpg")
 
-Card.create(card_type: "Hero", name: "Barack Obama", description: "first African American to hold the office.", strength: 6, intelligence: 10, charisma: 9, picture_url: "http://media.washtimes.com/media/image/2012/05/11/obama__live_c0-291-4518-2924_s326x190.jpg?b8990adc8b75b7a9887122323063b64956339cd9")
+Card.create(card_type: "Hero", name: "Barack Obama", description: "first African American to hold the office.", strength: 6, intelligence: 10, charisma: 9, picture_url: "http://media.washtimes.com/media/image/2012/05/11/obama__live_c0-291-4518-2924_s326x190.jpg?b8990adc8b75b7a9887122323063b64956339cd9", effect_description: "Hope (+2 C your hand)", effect_dsl: '[player] (hand>all) |charisma| {+2}')
 
-Card.create(card_type: "Hero", name: "Mao Zedong", description: "Commonly referred to as Chairman Mao, was a Chinese Communist revolutionary and the founding father of the People's Republic of China", strength: 1, intelligence: 4, charisma: 5, picture_url: "http://a1.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NDg0MDU1MDYwMjUyMTc1.jpg")
+Card.create(card_type: "Hero", name: "Mao Zedong", description: "Commonly referred to as Chairman Mao, was a Chinese Communist revolutionary and the founding father of the People's Republic of China", strength: 1, intelligence: 10, charisma: 15, picture_url: "http://a1.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NDg0MDU1MDYwMjUyMTc1.jpg", effect_description: "Propaganda (-1 I your deck)", effect_dsl: '[player] (deck>all) |intelligence| {-1}')
 
 Card.create(card_type: "Hero", name: "Nelson Mandela", description: "Was a South African anti-apartheid revolutionary, politician and philanthropist who served as President of South Africa from 1994 to 1999.", strength: 6, intelligence: 8, charisma: 9, picture_url: "http://a2.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTIwNjA4NjMzOTAyODkyNTU2.jpg")
 
-Card.create(card_type: "Hero", name:"Matthew D. Huff", description:"Get You Some..." , strength: 10 , intelligence: 10, charisma: 10, picture_url: "/murok_face.jpeg/", effect_description: "Gets the whole hand crunk. (+10 to all in-hand cards' stats)", effect_dsl: '[player] (hand>all) |charisma, intelligence, strength| {+10}')
+Card.create(card_type: "Hero", name:"Matthew D. Huff", description:"Get You Some..." , strength: 10 , intelligence: 10, charisma: 10, picture_url: "/murok_face.jpeg/", effect_description: "Gets the whole hand crunk. (+10 to S,I,C your hand' stats)", effect_dsl: '[player] (hand>all) |charisma, intelligence, strength| {+10}')
 
-Card.create(card_type: "Hero", name: "Betsy Carroll", description: "Jackie of all trades, mistress of TONS!!", strength: 5, intelligence: 10, charisma: 10, picture_url: "https://scontent-b-sea.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/1522028_10201042105079720_2027409000_n.jpg?oh=ea9fe65c9d057f3de0defa653fb262a7&oe=55356684", effect_description: "-10 to opponent's C,I,L.", effect_dsl: '[opponent] (hand>all) |charisma, intelligence, strength| {-10}')
+Card.create(card_type: "Hero", name: "Betsy Carroll", description: "Jackie of all trades, mistress of TONS!!", strength: 5, intelligence: 10, charisma: 10, picture_url: "https://scontent-b-sea.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/1522028_10201042105079720_2027409000_n.jpg?oh=ea9fe65c9d057f3de0defa653fb262a7&oe=55356684", effect_description: "-10 S,I,C their hand", effect_dsl: '[opponent] (hand>all) |charisma, intelligence, strength| {-10}')
 
 Card.create(card_type: "Hero", name: "Jay-Z" , description: "Allow me to reintroduce myself..." , strength: 6 , intelligence: 8 , charisma: 10, picture_url: "http://a2.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE5NTU2MzE2MTA0MjYzMTc5.jpg", effect_description: "-1 to opponent's C,I,L.", effect_dsl: '[opponent] (hand>all) |charisma, intelligence, strength| {-1}')
 
-Card.create(card_type: "Hero", name: "Mason Norsworthy", description: "Leader of the freemasons and prominent Illuminati member." , strength: 7, intelligence: 10, charisma: 10, picture_url: "https://yt3.ggpht.com/-3obxyu0ohIU/AAAAAAAAAAI/AAAAAAAAAAA/Ve0KzUtTIv4/s88-c-k-no/photo.jpg", effect_description: "-10 to opponent's C,I,L.", effect_dsl: '[opponent] (hand>all) |charisma, intelligence, strength| {-10}')
-
-Card.create(card_type: "Hero", name: "Bill Storey", description: "Lawyer turned coder. Famous for writing code that automatically sues people when they damage your property.", strength: 10, intelligence: 10, charisma: 9, picture_url: "http://s8.postimg.org/4aomfhfet/bill.jpg", effect_description: "-10 to opponent's C,I,L.", effect_dsl: '[opponent] (hand>all) |charisma, intelligence, strength| {-10}')
-
-Card.create(card_type: "Hero", name: "Dmitriy Istomin", description: "The father of artificial intelligence (as we, in the future, know it).", strength: 7, intelligence: 10, charisma: 10, picture_url: "https://media.licdn.com/mpr/mpr/shrink_120_120/p/2/005/081/0aa/2838490.jpg", effect_description: "-10 to opponent's C,I,L.", effect_dsl: '[opponent] (hand>all) |charisma, intelligence, strength| {-10}')
+Card.create(card_type: "Hero", name: "Bill Storey", description: "The man. The legend.", strength: 10, intelligence: 10, charisma: 9, picture_url: "http://s8.postimg.org/4aomfhfet/bill.jpg", effect_description: "-10 S,I,C their hand", effect_dsl: '[opponent] (hand>all) |charisma, intelligence, strength| {-10}')
 
 Card.create(card_type: "Hero", name: "Kim Kardashian", description: "The most selfied woman in history.", strength: 3, intelligence: 1, charisma: 7, picture_url: "http://ohyoumad.com/wp-content/uploads/2011/10/161164-kim-kardashian-and-chris-humphries-exclusive-wedding-photos-500x500.jpg")
 
