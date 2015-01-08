@@ -4,11 +4,11 @@
 
 TimePeriod.create(name: "Classical Period")
 
-Card.create(card_type: "Hero", name: "Cleopatra", description: "Last active pharaoh of Ancient Egypt.", strength: 4, intelligence: 8, charisma: 8, picture_url: "http://jerryandgod.files.wordpress.com/2013/12/807-e.jpg?w=186&h=186")
+Card.create(card_type: "Hero", name: "Cleopatra", description: "Last active pharaoh of Ancient Egypt.", strength: 4, intelligence: 5, charisma: 8, picture_url: "http://jerryandgod.files.wordpress.com/2013/12/807-e.jpg?w=186&h=186")
 
-Card.create(card_type: "Hero", name: "Mark Antony", description: "Transformed the Roman Republic from an oligarchy into the autocratic Roman Empire.", strength: 8, intelligence: 8, charisma: 7, picture_url: "http://media-2.web.britannica.com/eb-media/21/13421-004-A2A61DF4.jpg")
+Card.create(card_type: "Hero", name: "Mark Antony", description: "Transformed the Roman Republic from an oligarchy into the autocratic Roman Empire.", strength: 5, intelligence: 8, charisma: 7, picture_url: "http://media-2.web.britannica.com/eb-media/21/13421-004-A2A61DF4.jpg")
 
-Card.create(card_type: "Hero", name: "Julius Caesar", description: "Played a critical role in the events that led to the demise of the Roman Republic and the rise of the Roman Empire.", strength: 7, intelligence: 7, charisma: 9, picture_url: "http://a2.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE4MDAzNDEwNDQxMTExMDU0.jpg")
+Card.create(card_type: "Hero", name: "Julius Caesar", description: "Played a critical role in the events that led to the demise of the Roman Republic and the rise of the Roman Empire.", strength: 4, intelligence: 7, charisma: 6, picture_url: "http://a2.files.biography.com/image/upload/c_fill,dpr_1.0,g_face,h_300,q_80,w_300/MTE4MDAzNDEwNDQxMTExMDU0.jpg")
 
 Card.create(card_type: "Hero", name: "Socrates", description: "A classical Greek philosopher credited as one of the founders of Western philosophy.", strength: 2, intelligence: 6, charisma: 4, picture_url: "https://lh3.googleusercontent.com/-WktFY7Oa-h8/AAAAAAAAAAI/AAAAAAAAAFA/-Y1tLvHV_3g/photo.jpg")
 
